@@ -8,7 +8,6 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
   },
 }, {
-  createdAt: false,
-  updatedAt: false,
+  timestamps: false
 })
 };

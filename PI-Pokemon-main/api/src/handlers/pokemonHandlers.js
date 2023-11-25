@@ -1,10 +1,25 @@
-const {createPokemonDB} = require('../controllers/pokemonControllers')
-const getPokemonHandler = (req,res) =>{
-    res.status(200).send("todos los pokemones")
+const {createPokemonDB,getPokemonById,getAllPokemon} = require('../controllers/pokemonControllers')
+
+
+
+const getPokemonHandler = async (req,res) =>{
+    try {
+        const response = await getAllPokemon()
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(400).json({error:error.message})
+    }
 }
 
-const getPokemonDetailHandler = (req,res) =>{
-    res.status(200).send("datos especificos de cada pokemon")
+const getPokemonDetailHandler = async (req,res) =>{
+    const {id} = req.params;
+    const source = isNaN(id) ? "bdd" : "api"
+    try {
+        const response = await getPokemonById(id,source)
+        res.status(200).json(response)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 }
 
 const createPokemonHandler = async (req,res)=>{
@@ -13,7 +28,7 @@ const createPokemonHandler = async (req,res)=>{
         const response = await createPokemonDB(name,hp,attack,defense,speed,height,weight)
         res.status(200).json(response)
     } catch (error) {
-        
+        res.status(400).json({error: error.message})
     }
 }
 
