@@ -1,7 +1,7 @@
 .Card-container{
     display: flex;
     flex-direction: column;
-    background-color: #95dada;
+    background-color: #46a0a0;
     border: 1px solid;
     border-radius: 25px;
     cursor: pointer;

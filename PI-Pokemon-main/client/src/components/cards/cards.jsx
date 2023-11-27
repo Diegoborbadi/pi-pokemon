@@ -1,12 +1,14 @@
 import Card from "../card/card"
 import "./cards.css";
 
-const Cards = () => {
+const Cards = ({allPokemons}) => {
+    const pokemonList = allPokemons
+
     return(
         <div className="cards-list">
-        <Card/>
-        <Card/>
-        <Card/>
+            {pokemonList?.map((pokemon)=>(
+                <Card pokemon={pokemon}/>
+            ))}
         </div>
     )
 }
