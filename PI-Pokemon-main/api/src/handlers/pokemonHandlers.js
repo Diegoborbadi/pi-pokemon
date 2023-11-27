@@ -1,6 +1,4 @@
-const {createPokemonDB,getPokemonById,getAllPokemon} = require('../controllers/pokemonControllers')
-
-
+const {createPokemonDB,getPokemonById,getAllPokemon,} = require('../controllers/pokemonControllers')
 
 const getPokemonHandler = async (req,res) =>{
     try {
@@ -31,6 +29,7 @@ const createPokemonHandler = async (req,res)=>{
         res.status(400).json({error: error.message})
     }
 };
+
 module.exports = {
     getPokemonHandler,
     getPokemonDetailHandler,

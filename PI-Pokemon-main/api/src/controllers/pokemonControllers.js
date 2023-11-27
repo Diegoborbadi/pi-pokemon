@@ -49,7 +49,7 @@ const getAllPokemon = async () => {
     try {
       const allPokemon = await Pokemon.findAll();
   
-      const fetchPokemonData = async () => {
+      const axiosPokemonData = async () => {
         try {
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
           return response.data;
@@ -58,7 +58,7 @@ const getAllPokemon = async () => {
         }
       };
   
-      const apiInfoPokemon = await fetchPokemonData();
+      const apiInfoPokemon = await axiosPokemonData();
   
       const cleanApiPokemon = await Promise.all(
         apiInfoPokemon.results.map(async (pokemon) => {
@@ -86,5 +86,4 @@ const getAllPokemon = async () => {
     }
   };
   
-
-module.exports = {createPokemonDB,getPokemonById,getAllPokemon}
+module.exports = {createPokemonDB,getPokemonById,getAllPokemon,}

@@ -3,7 +3,7 @@ const
     {
     getPokemonHandler,
     getPokemonDetailHandler,
-    createPokemonHandler
+    createPokemonHandler,
     } = require("../handlers/pokemonHandlers")
 
 const routerPokemon = Router();
