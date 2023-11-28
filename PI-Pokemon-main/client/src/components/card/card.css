@@ -1,16 +1,27 @@
-.Card-container{
+.Card-container {
+    margin-top: 2px;
+    border: 1px solid rgb(235, 212, 9);
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
     display: flex;
-    flex-direction: column;
-    background-color: #46a0a0;
-    border: 1px solid;
-    border-radius: 25px;
-    cursor: pointer;
-    -moz-osx-font-smoothing: greyscale;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    transition: trasform 0.25s ease-out;
-}
-
-.Card-container:hover{
-    transform: scale(1.05);
-}
+    flex-direction:column;
+    background-color:rgb(42, 185, 185)
+  }
+  
+  .Card-container:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  }
+  
+  .Card-container img {
+    max-width: 50%;
+    height: auto;
+    border: 1px solid rgb(235, 212, 9);
+    border-radius: 50%; /* Hace que la imagen sea un círculo */
+  }
+  
+  .Card-container h2 {
+    margin-top: 10px; /* Espacio entre la imagen y el nombre */
+  }
+  

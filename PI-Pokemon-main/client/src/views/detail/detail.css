@@ -1,0 +1,20 @@
+/* detail.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  width: 80%; /* Ancho del contenedor */
+  border: 1px solid #ccc; /* Borde para visualizar el contenedor */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
