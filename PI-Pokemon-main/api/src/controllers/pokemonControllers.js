@@ -28,13 +28,14 @@ const getPokemonById = async (id, source) => {
     } else {
       const pokemonDetails = response.data;
       const img = pokemonDetails.sprites.other.dream_world.front_default;
-
+      const idpokemon = pokemonDetails.id; // Corregir acceso a la propiedad "id"
       return {
         name: pokemonDetails.name,
         hp: pokemonDetails.stats.find((stat) => stat.stat.name === 'hp').base_stat,
         attack: pokemonDetails.stats.find((stat) => stat.stat.name === 'attack').base_stat,
         defense: pokemonDetails.stats.find((stat) => stat.stat.name === 'defense').base_stat,
         speed: pokemonDetails.stats.find((stat) => stat.stat.name === 'speed').base_stat,
+        id: idpokemon,
         height: pokemonDetails.height,
         weight: pokemonDetails.weight,
         created: false,
@@ -45,6 +46,7 @@ const getPokemonById = async (id, source) => {
     throw new Error(error.message);
   }
 };
+
 
   
 
@@ -68,13 +70,14 @@ const getAllPokemon = async () => {
         try {
           const pokemonDetails = await axios.get(pokemon.url);
           const img = pokemonDetails.data.sprites.other.dream_world.front_default;
-
+          const id = pokemonDetails.data.id
           return {
             name: pokemon.name,
             hp: pokemonDetails.data.stats.find((stats) => stats.stat.name === 'hp').base_stat,
             attack: pokemonDetails.data.stats.find((stats) => stats.stat.name === 'attack').base_stat,
             defense: pokemonDetails.data.stats.find((stats) => stats.stat.name === 'defense').base_stat,
             speed: pokemonDetails.data.stats.find((stats) => stats.stat.name === 'speed').base_stat,
+            id: id,
             height: pokemonDetails.data.height,
             weight: pokemonDetails.data.weight,
             created: false,
